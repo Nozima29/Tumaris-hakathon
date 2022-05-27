@@ -13,7 +13,22 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    def save(self, *args, **kwargs) -> None:
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        return super().save(*args, **kwargs)
+
+
+class Types(models.Model):
+    category = models.ForeignKey(
+        Category, related_name='type', on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255)
+
+    def __str__(self) -> str:
+        return self.name
+
+    def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
         return super().save(*args, **kwargs)
@@ -21,8 +36,8 @@ class Category(models.Model):
 
 class Products(models.Model):
     name = models.CharField(max_length=255)
-    category = models.ForeignKey(
-        Category, related_name='products', on_delete=models.CASCADE)
+    type = models.ForeignKey(
+        Types, related_name='products', on_delete=models.CASCADE, null=True)
     inventory = models.ForeignKey(
         Inventory, related_name='product', on_delete=models.CASCADE, null=True)
     description = models.TextField(blank=True, null=True)
