@@ -10,6 +10,7 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.CharField(max_length=50, blank=True, null=True)
+    phone = models.CharField(max_length=20, null=True, blank=True)
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES.choices)
     age = models.PositiveIntegerField()
