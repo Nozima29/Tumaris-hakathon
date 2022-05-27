@@ -14,3 +14,11 @@ class ProductDetailView(TemplateView):
 
 class CategoryView(TemplateView):
     template_name = 'pages/category.html'
+
+
+class BlogView(TemplateView):
+    template_name = 'pages/blog.html'
+
+
+class PostView(TemplateView):
+    template_name = 'pages/post.html'
