@@ -1,11 +1,8 @@
 from django.urls import path
-from django.http import HttpResponse
-
-
-def index(request):
-    return HttpResponse('customers')
+from customers.views import register, login
 
 
 urlpatterns = [
-    path('', index)
+    path('login/', login, name='login'),
+    path('register/', register, name='register'),
 ]

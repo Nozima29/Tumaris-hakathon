@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Inventory
 # Register your models here.
+from shop.models import Inventory
 
 admin.site.register(Inventory)

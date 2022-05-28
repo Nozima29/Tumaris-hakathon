@@ -7,5 +7,6 @@ def index(request):
 
 
 urlpatterns = [
-    path('', index)
+    path('', index),
+
 ]
