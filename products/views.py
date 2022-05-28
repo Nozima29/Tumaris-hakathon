@@ -19,5 +19,7 @@ class CategoryView(TemplateView):
     def get_context_data(self, **kwargs):
         categories = Category.objects.all()
         shops = Inventory.objects.all()
+        for category in categories:
+            category.counter = category.type.all().count()
 
         return {'categories': categories, 'shops': shops}

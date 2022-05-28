@@ -1,5 +1,5 @@
 {%extends "base.html" %}
-    
+{% load static %}
     {% block title %}
       Categories
     {% endblock title %}
@@ -32,12 +32,11 @@
                 <div class="card-body">
                   <ul class="nav nav-pills flex-column category-menu">
                     {% for category in categories %}
-                    <li><a href="category.html" class="nav-link">{{ category.name }}<span class="badge badge-secondary">42</span></a>
+                    <li><a href="category.html" class="nav-link">{{ category.name }}<span class="badge badge-secondary">{{category.counter}}</span></a>
                       <ul class="list-unstyled">
-                        <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                        <li><a href="category.html" class="nav-link">Shirts</a></li>
-                        <li><a href="category.html" class="nav-link">Pants</a></li>
-                        <li><a href="category.html" class="nav-link">Accessories</a></li>
+                        {% for type in category.type.all %}
+                          <li><a href="category.html" class="nav-link">{{type}}</a></li>
+                        {% endfor %}
                       </ul>
                     </li>
                     {% endfor %}
@@ -67,13 +66,9 @@
               
               
               <!-- *** MENUS AND FILTERS END ***-->
-              <div class="banner"><a href="#"><img src="img/banner.jpg" alt="sales 2014" class="img-fluid"></a></div>
+              <div class="banner"><a href="#"><img src="{% static 'img/banner.jpg' %} " alt="sales 2014" class="img-fluid"></a></div>
             </div>
-            <div class="col-lg-9">
-              <div class="box">
-                <h1>Ladies</h1>
-                <p>In our Ladies department we offer wide selection of the best products we have found and carefully selected worldwide.</p>
-              </div>
+            <div class="col-lg-9">              
               <div class="box info-bar">
                 <div class="row">
                   <div class="col-md-12 col-lg-4 products-showing">Showing <strong>12</strong> of <strong>25</strong> products</div>
