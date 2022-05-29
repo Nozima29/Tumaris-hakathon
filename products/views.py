@@ -62,5 +62,9 @@ class PostView(TemplateView):
     template_name = 'pages/post.html'
 
 
+class ContactView(TemplateView):
+    template_name = 'pages/contact.html'
+
+
 class ProductRegisterView(TemplateView):
     template_name = 'pages/shop-register-form.html'
