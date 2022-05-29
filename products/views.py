@@ -25,7 +25,7 @@ class HomeView(TemplateView):
         context = {
             'inventories': inventories
         }
-        return render(request, 'pages/index.html', context=context)
+        return render(request, self.template_name, context=context)
 
 
 class ProductDetailView(DetailView):
@@ -70,6 +70,10 @@ class BlogView(TemplateView):
 
 class PostView(TemplateView):
     template_name = 'pages/post.html'
+
+
+class ContactView(TemplateView):
+    template_name = 'pages/contact.html'
 
 
 class ProductRegisterView(TemplateView):
