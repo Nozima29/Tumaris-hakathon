@@ -32,13 +32,13 @@
                 </div>
                 <div class="card-body">
                   <ul class="nav nav-pills flex-column category-menu">
-                    <li><a href="category.html" class="nav-link">Men <span class="badge badge-secondary">42</span></a>
+                    <li><a href="{% url 'category' %}" class="nav-link">Men <span class="badge badge-secondary">42</span></a>
                       
                       <ul class="list-unstyled">
-                        <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                        <li><a href="category.html" class="nav-link">Shirts</a></li>
-                        <li><a href="category.html" class="nav-link">Pants</a></li>
-                        <li><a href="category.html" class="nav-link">Accessories</a></li>
+                        <li><a href="{% url 'category' %}" class="nav-link">T-shirts</a></li>
+                        <li><a href="{% url 'category' %}" class="nav-link">Shirts</a></li>
+                        <li><a href="{% url 'category' %}" class="nav-link">Pants</a></li>
+                        <li><a href="{% url 'category' %}" class="nav-link">Accessories</a></li>
                       </ul>
                     </li>
                     
@@ -145,5 +145,5 @@
     *** FOOTER ***
     _________________________________________________________
     -->
-    {% include "footer.html"%}
-{% endblock main%}
+    {% include "footer.html" %}
+{% endblock main %}
