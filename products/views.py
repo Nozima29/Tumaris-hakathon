@@ -8,21 +8,21 @@ from products.models import Products, Category
 from shop.models import Inventory
 
 
-class HomeView(ListView):
-    model = Inventory
-    context_object_name = 'inventories'
-    template_name = 'pages/index.html'
-
-    def get(self, request):
-        if request.GET.get('search'):
-            keywrd = request.GET.get('search')
-            category = Category.objects.filter(name__startswith=keywrd)
-            shop = Inventory.objects.filter(name__startswith=keywrd)
-            products = Products.objects.filter(type__category__in=category)
-            context = {'categories': category,
-                       'shops': shop, 'products': products}
-            return render(request, 'pages/category.html', context=context)
-        return render(request, self.template_name)
+def homepage(request):
+    if request.GET.get('search'):
+        keywrd = request.GET.get('search')
+        category = Category.objects.filter(name__startswith=keywrd)
+        shop = Inventory.objects.filter(name__startswith=keywrd)
+        products = Products.objects.filter(type__category__in=category)
+        context = {'categories': category,
+                   'shops': shop,
+                   'products': products}
+        return render(request, 'pages/category.html', context=context)
+    inventories = Inventory.objects.all()
+    context = {
+        'inventories': inventories
+    }
+    return render(request, 'pages/index.html', context=context)
 
 
 class ProductDetailView(DetailView):
