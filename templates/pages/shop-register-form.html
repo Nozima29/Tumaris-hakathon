@@ -31,17 +31,21 @@
                   <div class="form-group">
                     <label for="shop">Shop</label> <span style="color:red;">*</span>
                     <select name="shop" type="select" class="form-control">
-                      <option> </option>
+                      {% for shop in shops %}
+                        <option value="{{shop.name}}">{{shop.name}}</option>
+                      {% endfor %}
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="type">Product type</label> <span style="color:red;">*</span>
                     <select name="type" type="select" class="form-control">
-                    <option> </option>
+                    {% for type in types %}
+                    <option value="{{type.name}}">{{type.name}}</option>
+                    {% endfor %}
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="brand">Brand</label> <span style="color:red;">*</span>
+                    <label for="brand">Brand Name</label> <span style="color:red;">*</span>
                     <input name="brand" type="text" class="form-control">
                   </div>
                   <div class="form-group">

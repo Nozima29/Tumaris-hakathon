@@ -54,6 +54,10 @@ class Products(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    @property
+    def discount_price(self):
+        return self.price - (self.price * self.discount / 100)
+
 
 class ProductRate(models.Model):
     product = models.ForeignKey(

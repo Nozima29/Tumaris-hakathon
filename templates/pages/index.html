@@ -10,57 +10,43 @@
     <div id="all">
       <div id="content">
         <div class="container">
-          <div class="row">
+          {% comment %} <div class="row">
             <div class="col-md-12">
               <div id="main-slider" class="owl-carousel owl-theme">
                 <div class="item"><img src="{% static 'img/main-slider1.jpg' %}" alt="" class="img-fluid"></div>
                 <div class="item"><img src="{% static 'img/main-slider2.jpg' %}" alt="" class="img-fluid"></div>
-                <div class="item"><img src="{% static 'img/main-slider3.jpg' %}" alt="" class="img-fluid"></div>
-                <div class="item"><img src="{% static 'img/main-slider4.jpg' %}" alt="" class="img-fluid"></div>
+                <div class="item"><img src="{% static 'img/main-slider3.jpg' %}" alt="" class="img-fluid"></div>                
               </div>
-              <!-- /#main-slider-->
             </div>
-          </div>
-        </div>
-        <!--
-        *** ADVANTAGES HOMEPAGE ***
-        _________________________________________________________
-        -->
+          </div> {% endcomment %}
+        </div>        
         <div id="advantages">
           <div class="container">
             <div class="row mb-4">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
                   <div class="icon"><i class="fa fa-heart"></i></div>
                   <h3><a href="#">We love our customers</a></h3>
-                  <p class="mb-0">We are known to provide best possible service ever</p>
+                  <p class="mb-0">We are known to provide best possible service ever from popular markets</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
                   <div class="icon"><i class="fa fa-tags"></i></div>
                   <h3><a href="#">Best prices</a></h3>
                   <p class="mb-0">You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              {% comment %} <div class="col-md-4">
                 <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
                   <div class="icon"><i class="fa fa-thumbs-up"></i></div>
                   <h3><a href="#">100% satisfaction guaranteed</a></h3>
                   <p class="mb-0">Free returns on everything for 3 months.</p>
                 </div>
-              </div>
-            </div>
-            <!-- /.row-->
-          </div>
-          <!-- /.container-->
-        </div>
-        <!-- /#advantages-->
-        <!-- *** ADVANTAGES END ***-->
-        <!--
-        *** HOT PRODUCT SLIDESHOW ***
-        _________________________________________________________
-        -->
+              </div> {% endcomment %}
+            </div>            
+          </div>          
+        </div>        
         <div id="hot">
           <div class="box py-4">
             <div class="container">
@@ -80,13 +66,13 @@
                           <div class="flip-container">
                             <div class="flipper">
                               <div class="front"><a href="{% url 'detail' product.pk %}"><img src="{{ product.image.url }}" alt="" class="img-fluid"></a></div>
-                              <div class="back"><a href="{% url 'detail' product.pk %}"><img src="{{ product.image.url }}" alt="" class="img-fluid"></a></div>
+                              <div class="back"><a href="{% url 'detail' product.pk %}"><img src="{{ product.image.url }}" alt="{% static 'img/logo.png' %}" class="img-fluid"></a></div>
                             </div>
                           </div><a href="{% url 'detail' product.pk %}" class="invisible"><img src="{{ product.image.url }}" alt="" class="img-fluid"></a>
                           <div class="text">
                             <h3><a href="{% url 'detail' product.pk %}">{{ product.name }}</a></h3>
                             <p class="price">
-                              <del>$280</del>{{ product.price }}
+                              <del>{{ product.price }}</del> {{ product.discount_price }}
                             </p>
                           </div>
                           <!-- /.text-->
@@ -125,7 +111,7 @@
           <div class="col-md-12">
             <div class="box slideshow">
               <h3>Get Inspired</h3>
-              <p class="lead">Get the inspiration from our world class designers</p>
+              <p class="lead">Get best discount information from best brands</p>
               <div id="get-inspired" class="owl-carousel owl-theme">
                 <div class="item"><a href="#"><img src="{% static 'img/getinspired1.jpg' %}" alt="Get inspired" class="img-fluid"></a></div>
                 <div class="item"><a href="#"><img src="{% static 'img/getinspired2.jpg' %}" alt="Get inspired" class="img-fluid"></a></div>
