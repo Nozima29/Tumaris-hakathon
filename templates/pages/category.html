@@ -20,11 +20,7 @@
                 </ol>
               </nav>
             </div>
-            <div class="col-lg-3">
-              <!--
-              *** MENUS AND FILTERS ***
-              _________________________________________________________
-              -->
+            <div class="col-lg-3">              
               <div class="card sidebar-menu mb-4">
                 <div class="card-header">
                   <h3 class="h4 card-title">Categories</h3>
@@ -62,11 +58,6 @@
                   </form>
                 </div>
               </div>
-              
-              
-              
-              <!-- *** MENUS AND FILTERS END ***-->
-              <div class="banner"><a href="#"><img src="{% static 'img/banner.jpg' %} " alt="sales 2014" class="img-fluid"></a></div>
             </div>
             <div class="col-lg-9">              
               <div class="box info-bar">
@@ -102,11 +93,9 @@
                       <p class="price"> 
                         <del></del>{{product.price}}
                       </p>
-                      <p class="buttons"><a href="{% url 'detail' product.pk %}" class="btn btn-outline-secondary">View detail</a><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to favorites</a></p>
-                    </div>
-                    <!-- /.text-->
-                  </div>
-                  <!-- /.product            -->
+                      <p class="buttons"><a href="{% url 'detail' product.pk %}" class="btn btn-outline-secondary">View detail</a><a href="{% url 'add' product.pk  %}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to favorites</a></p>
+                    </div>                    
+                  </div>                  
                 </div>
               {% endfor %}
                 

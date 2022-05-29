@@ -35,6 +35,8 @@ class ProductDetailView(DetailView):
         product = Products.objects.get(id=obj.id)
         others = Products.objects.filter(
             type=product.type).exclude(id=product.id)
+        obj.views += 1
+        obj.save()
         context = {'product': product, 'others': others}
         return context
 
@@ -58,3 +60,7 @@ class BlogView(TemplateView):
 
 class PostView(TemplateView):
     template_name = 'pages/post.html'
+
+
+class ProductRegisterView(TemplateView):
+    template_name = 'pages/shop-register-form.html'
