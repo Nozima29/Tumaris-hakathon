@@ -56,7 +56,7 @@
           </div>
           <div id="navigation" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+              <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
               <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Categories<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>
@@ -64,31 +64,31 @@
                       <div class="col-md-6 col-lg-3">
                         <h5>Clothing</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">T-shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Pants</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Accessories</a></li>
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">T-shirts</a></li>
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Shirts</a></li>
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Pants</a></li>
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Accessories</a></li>
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
                         <h5>Tech</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>                          
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Trainers</a></li>                          
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
                         <h5>Food</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Pizza</a></li>                          
-                          <li class="nav-item"><a href="category.html" class="nav-link">Burgers</a></li>                          
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Pizza</a></li>                          
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Burgers</a></li>                          
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">                        
                         <h5>Looks and trends</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Trainers</a></li>
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Sandals</a></li>
+                          <li class="nav-item"><a href="{% url 'category' %}" class="nav-link">Hiking shoes</a></li>
                         </ul>
                       </div>
                     </div>
@@ -102,25 +102,25 @@
                       <div class="col-md-6 col-lg-3">
                         <h5>Shop</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="index.html" class="nav-link">Homepage</a></li>                          
-                          <li class="nav-item"><a href="detail.html" class="nav-link">Product detail</a></li>
+                          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Shops List</a></li>                          
+                          <li class="nav-item"><a href="{% url 'product-register' %}" class="nav-link">Register your Inventory</a></li>
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
                         <h5>User</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="register.html" class="nav-link">Register / login</a></li>
-                          <li class="nav-item"><a href="  -wishlist.html" class="nav-link">Wishlist</a></li>
-                          <li class="nav-item"><a href="customer-account.html" class="nav-link">Customer account / change password</a></li>
+                          <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register / login</a></li>
+                          <li class="nav-item"><a href="{% url 'favorites' %}" class="nav-link">Favorites</a></li>
+                          {% comment %} <li class="nav-item"><a href="customer-account.html" class="nav-link">Customer account / change password</a></li> {% endcomment %}
                         </ul>
                       </div>                      
                       <div class="col-md-6 col-lg-3">
                         <h5>Pages and blog</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="blog.html" class="nav-link">Blog listing</a></li>
-                          <li class="nav-item"><a href="post.html" class="nav-link">Blog Post</a></li>
-                          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>                          
-                          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Blog listing</a></li>
+                          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Blog Post</a></li>
+                          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">FAQ</a></li>                          
+                          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Contact</a></li>
                         </ul>
                       </div>
                     </div>
